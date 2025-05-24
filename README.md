@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: url('nush-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #f5f5f5;
+        }
+        
+        .form-container {
+            background-color: pink;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 150px;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            
+        }
+
+        #confirmation-message {
+            display: none;
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e8f5e9;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Kya dikkat hai sajjan ko</h1>
+        <form id="complaintForm">
+            <div class="form-group">
+                <label for="complaint">Enter your complaint:</label>
+                <textarea id="complaint" name="complaint" required></textarea>
+            </div>
+            <button type="submit">Submit Complaint</button>
+        </form>
+        <div id="confirmation-message">The nerve??? JK, Nush has received your complaint loud and clear and it's on her mental post-it. Whether she’s plotting or chilling, she’s got it now. 💖 Thank you!</div>
+    </div>
+
+    <script>
+        document.getElementById('complaintForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get the complaint text
+            const complaintText = document.getElementById('complaint').value;
+            
+            // Clear the form
+            document.getElementById('complaint').value = '';
+            
+            // Show the confirmation message
+            const confirmationMessage = document.getElementById('confirmation-message');
+            confirmationMessage.style.display = 'block';
+            
+            // Hide the confirmation message after 3 seconds
+            setTimeout(() => {
+                confirmationMessage.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html> 
